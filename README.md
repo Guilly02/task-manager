@@ -37,14 +37,14 @@ task-manager/
 
 ## Features
 
-- **Add tasks** — give it a title and an optional description
-- **Mark as done / undo** — click the circle to toggle status
-- **Edit tasks** — update the title or description anytime
-- **Delete tasks** — with a confirm step so you don't accidentally nuke something
-- **Search** — filters tasks by name as you type
-- **Filter tabs** — switch between All, Active, and Done views
-- **Search + Filter together** — they work in combination (e.g. search "report" while on Done)
-- **Live counts** — the tabs show how many tasks are in each category
+- Add tasks — give it a title and an optional description
+- Mark as done / undo — click the circle to toggle status
+- Edit tasks — update the title or description anytime
+- Delete tasks — with a confirm step so you don't accidentally nuke something
+- Search — filters tasks by name as you type
+- Filter tabs — switch between All, Active, and Done views
+- Search + Filter together — they work in combination (e.g. search "report" while on Done)
+- Live counts — the tabs show how many tasks are in each category
 
 ---
 
@@ -62,28 +62,28 @@ Before you start, make sure you have these installed:
 
 ### 1. Clone the repo
 
-```bash
+
 git clone https://github.com/your-username/task-manager.git
 cd task-manager
-```
 
----
+
+
 
 ### 2. Set up the database
 
 Open pgAdmin (or psql) and create a new database:
 
-```sql
+sql
 CREATE DATABASE taskmanager;
-```
+
 
 That's it — the tables get created automatically when you run the backend.
 
----
+
 
 ### 3. Set up the backend
 
-```bash
+
 cd backend
 
 # Create a virtual environment
@@ -97,7 +97,7 @@ source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
-```
+
 
 Now create a `.env` file inside the `backend/` folder:
 
@@ -141,7 +141,7 @@ This installs `concurrently` so you can run both servers at once.
 
 ## Running the App
 
-From the **root** folder, just run:
+From the ROOT folder, just run:
 
 ```bash
 npm run dev
@@ -169,7 +169,7 @@ All endpoints are prefixed with `/tasks`.
 | `PATCH` | `/tasks/{id}/toggle` | Toggle a task's completed status |
 | `DELETE` | `/tasks/{id}` | Delete a task |
 
-You can try all of these interactively at **http://localhost:8000/docs**.
+You can try all of these interactively at http://localhost:8000/docs.
 
 ---
 
@@ -177,7 +177,7 @@ You can try all of these interactively at **http://localhost:8000/docs**.
 
 If you'd rather run them in separate terminals:
 
-**Backend:**
+Backend:
 ```bash
 cd backend
 venv\Scripts\activate       # Windows
@@ -185,7 +185,7 @@ source venv/bin/activate    # Mac/Linux
 uvicorn main:app --reload
 ```
 
-**Frontend:**
+Frontend:
 ```bash
 cd frontend
 npm run dev
@@ -195,39 +195,39 @@ npm run dev
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|------------|
-| Frontend | React 18, Vite, Tailwind CSS v4 |
-| Backend | Python, FastAPI, Uvicorn |
-| Database | PostgreSQL |
-| ORM | SQLAlchemy |
-| Validation | Pydantic |
-| HTTP Client | Axios |
-| Dev tooling | Concurrently |
+ Layer - Technology 
+
+ Frontend - React 18, Vite, Tailwind CSS v4 
+ Backend - Python, FastAPI, Uvicorn 
+ Database - PostgreSQL 
+ ORM - SQLAlchemy 
+ Validation - Pydantic 
+ HTTP Client - Axios 
+ Dev tooling - Concurrently 
 
 ---
 
 ## Common Issues
 
-**Backend won't start?**
+Backend won't start?
 - Make sure your virtual environment is activated
 - Double-check the `DATABASE_URL` in `backend/.env`
 - Make sure PostgreSQL is running and the `taskmanager` database exists
 
-**Frontend can't connect to the backend?**
+Frontend can't connect to the backend?
 - Make sure the backend is running on port `8000`
 - Check that `frontend/.env` has `VITE_API_URL=http://localhost:8000`
 - Check the browser console for CORS errors
 
-**Tailwind styles not working?**
+Tailwind styles not working?
 - Make sure you have `@tailwindcss/vite` installed (`npm install @tailwindcss/vite`)
 - `index.css` should start with `@import "tailwindcss";` (not the old `@tailwind` directives)
 
----
+
 
 ## Author
 
-**Guilly Albert Tabasa**  
+Guilly Albert Tabasa
 Computer Science Graduate — Imus Institute of Science and Technology  
 GitHub: [github.com/Guilly02](https://github.com/Guilly02)  
 Portfolio: [guilly-portfolio.vercel.app](https://guilly-portfolio.vercel.app)
